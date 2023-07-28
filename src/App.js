@@ -34,6 +34,20 @@ function App() {
       </ul>
 
     </header>
+    <div className="line"> </div>
+    <div className="slider">
+        <div className="slider_left_part">
+             <img src="/img/slider_logo.png"/>
+             <div className="slider_info">
+                   <p>Stan Smith <span>,Forever!</span></p>
+                   <button>КУПИТИ</button>
+             </div>
+         </div>
+
+         <div className="slider_right_part">
+              <img src="/img/image_slider.png"/>
+         </div>
+    </div>
     <div className="content">
         <h1>Усі кроссовки</h1>
         <div>
