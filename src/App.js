@@ -6,7 +6,7 @@ function App() {
     <div className="wrapper">
     <header>
       <div className="header_left">
-           <img width="40" height="40" src="/img/logo.png"/>
+           <img width="40" height="40" src="/img/logo.png" alt="logo"/>
 		      <div className="header_info">
 		          <h2>REACT SHOES</h2>
 		          <p>Магазин найкращого взуття</p>
@@ -37,7 +37,7 @@ function App() {
     <div className="line"> </div>
     <div className="slider">
         <div className="slider_left_part">
-             <img src="/img/slider_logo.png"/>
+             <img src="/img/slider_logo.png" alt="logo-slider"/>
              <div className="slider_info">
                    <p>Stan Smith <span>,Forever!</span></p>
                    <button>КУПИТИ</button>
@@ -45,7 +45,7 @@ function App() {
          </div>
 
          <div className="slider_right_part">
-              <img src="/img/image_slider.png"/>
+              <img src="/img/image_slider.png"/ alt="slider">
          </div>
     </div>
     <div className="content">
