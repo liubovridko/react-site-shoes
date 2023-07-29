@@ -37,6 +37,7 @@ function App() {
     <div className="line"> </div>
     <div className="slider">
         <div className="slider_left_part">
+
              <img src="/img/slider_logo.png" alt="logo-slider"/>
              <div className="slider_info">
                    <p>Stan Smith <span>,Forever!</span></p>
@@ -46,6 +47,7 @@ function App() {
 
          <div className="slider_right_part">
               <img src="/img/image_slider.png"/ alt="slider">
+
          </div>
     </div>
     <div className="content">
