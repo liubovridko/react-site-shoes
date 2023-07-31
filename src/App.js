@@ -46,12 +46,9 @@ function App() {
          </div>
 
          <div className="slider_right_part">
-<<<<<<< HEAD
-              <img src="/img/image_slider.png"alt="slider" />
-=======
-              <img src="/img/image_slider.png"/ alt="slider">
 
->>>>>>> df6290c682d2661cc305664907561f5b62cbe403
+              <img src="/img/image_slider.png"alt="slider" />
+
          </div>
     </div>
     <section className="content">
