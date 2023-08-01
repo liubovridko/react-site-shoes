@@ -48,7 +48,9 @@ function App() {
 
          <div className="slider_right_part">
 
+
               <img src="/img/image_slider.png" alt="slider" />
+
 
          </div>
     </div>
