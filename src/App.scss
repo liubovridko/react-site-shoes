@@ -38,6 +38,8 @@
 }
 
 .wrapper{
+        font-family: 'Inter';
+        font-style: normal;
   header{
     margin:  auto 44px;
     display: flex;
@@ -51,8 +53,6 @@
               .header_info {
                 
                   h2 {
-                    font-family: 'Inter';
-                    font-style: normal;
                     font-weight: 700;
                     font-size: 20px;
                     line-height: 24px;
@@ -61,8 +61,6 @@
                     margin: 0;
                   }
                   p{
-                    font-family: 'Inter';
-                    font-style: normal;
                     font-weight: 400;
                     font-size: 14px;
                     line-height: 17px;
@@ -75,15 +73,13 @@
           ul.header_right {
             list-style: none;
           
-          display: flex;
+            display: flex;
                li{
                  margin-right: 30px;
                     &:last-of-type {
                       margin-right: 0;
                     }
                     span{
-                    font-family: 'Inter';
-                    font-style: normal;
                     font-weight: 600;
                     font-size: 14px;
                     line-height: 17px;
@@ -141,5 +137,69 @@
            .slider_right_part{
             flex: 1 1 60%;
            }
+    }
+    section.content{
+      padding: 0 60px 30px 60px;
+            h1{
+              margin: 0;
+              font-weight: 700;
+              font-size: 32px;
+              line-height: 39px;
+              color: #000000;
+              margin-bottom: 30px;
+            }
+            div.items{
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              
+                     .item {
+                      max-width: 210px;
+                      max-height: 260px;
+                      box-sizing: border-box;
+                      background: #FFFFFF;
+                      border: 1px solid #F3F3F3;
+                      border-radius: 40px;
+                      padding: 20px 29px 34px 30px;
+                      margin-bottom: 30px;
+
+                                  img{
+                                    position: relative;
+                                    margin: 0 auto;
+
+                                  }
+                                  svg.icon_like{
+                                    position: absolute;
+                                    z-index: 10;
+                                  }
+                                  h3{
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 17px;
+                                    color: #000000;
+                                    margin: 14px 0;
+                                }
+                                .item_price{
+                                  display: flex;
+                                  justify-content:space-between;
+                                          p{
+                                            font-weight: 500;
+                                            font-size: 11px;
+                                            line-height: 13px;
+                                            text-transform: uppercase;
+                                            color: #BDBDBD;
+                                            margin: 0;
+                                                       span{
+                                                          font-weight: 700;
+                                                          font-size: 14px;
+                                                          line-height: 17px;
+                                                          color: #000000;
+                                                         }
+                                          }
+
+                                }
+
+                     }
+            }
     }
 }
