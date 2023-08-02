@@ -5,6 +5,30 @@ function App() {
 
   return (
     <div className="wrapper clear">
+
+     <div className="overlay">
+        <div className="drawer">
+          <h2 className="mb-30"> Кошик</h2>
+          <div className="cartItem d-flex align-center mb-20">
+             <div className="cartIatemImg mr-10" style={{ backgroundImage:'url(img/sneakers/image1.svg)'}} ></div>
+             <div className="mr-10">
+               <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
+               <b>12 999грн</b>
+             </div>
+             <img className="btnCartRemove" src="img/btn-cart-remove.svg" alt="Button Remove" />
+          </div>
+          <div className="cartItem d-flex align-center mb-20">
+             <div className="cartIatemImg mr-10" style={{ backgroundImage:'url(img/sneakers/image1.svg)'}} ></div>
+             <div className="mr-10">
+               <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
+               <b>12 999грн</b>
+             </div>
+             <img className="btnCartRemove" src="img/btn-cart-remove.svg" alt="Button Remove" />
+          </div>
+        </div>
+     </div>
+
+
     <header className="d-flex justify-between p-40">
       <div className="header_left d-flex align-center">
            <img width="40" height="40" src="/img/logo.png" alt="logo"/>
@@ -57,13 +81,17 @@ function App() {
     </div>
     <section className="content">
 
+
+
         <div  className="d-flex justify-between">
+
         <h1>Усі кроссовки</h1>
-          <form>
-           <button type="submit">Search</button>
-            <input className="input_search" type="search" placeholder="Пошук" />
+          <div className="search-form d-flex">
+           <img src="img/search.svg" alt="search" />
+            <input className="input_search" type="search" placeholder="Пошук..." />
            
-          </form>
+          </div>
+
             
             
             

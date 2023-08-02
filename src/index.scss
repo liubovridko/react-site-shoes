@@ -1,3 +1,8 @@
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: 'Inter';
@@ -16,6 +21,9 @@ body {
         border-radius: 20px;
         max-width: 1080px;
         margin: 40px auto;
+
+      }
+
         
   header{
     border-bottom: 1px solid #EAEAEA;
@@ -59,9 +67,8 @@ body {
           }
   }
 
-   div.line{ 
-    
-    }
+
+  
     div.slider {
       margin: 45px 60px 40px 60px;
       background-color: #F4EFE9;
@@ -116,53 +123,21 @@ body {
               font-size: 32px;
               line-height: 39px;
               color: #000000;
-              margin-bottom: 30px;
+             
             }
            
-            form {
-                width: 250px;
-                height: 45px;
+            .search-form {
                                
                 border: 1px solid #F3F3F3;
                 border-radius: 10px;
-                display: flex;
+                padding: 0 18px;
                
-                                 input[type="search"] {
+                                 input {
                                   border: none;
-                                  background: transparent;
-                                  margin: 0;
-                                  padding-left: 26px; 
-                                  font-size: 14px;
-                                  color: inherit;
-                                  border: 1px solid transparent;
-                                  border-radius: inherit;
+                                  padding: 13px;
                                   font-size: 14px;
                                   font-weight: 400;
-                                  line-height: 17px;
-                                  letter-spacing: 0em;
-                                  text-align: left;
-                                }
-
-                                input[type="search"]::placeholder {
-                                  color: #bbb;
-                                }
-
-                                button[type="submit"] {
-                                  text-indent: -999px;
-                                  overflow: hidden;
-                                  width: 40px;
-                                  padding: 0;
-                                  margin: 0;
-                                  border: 1px solid transparent;
-                                  border-radius: inherit;
-                                  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
-                                  cursor: pointer;
-                                  opacity: 0.7;
-                                }
-
-                                button[type="submit"]:hover {
-                                  opacity: 1;
-                                }
+                                 }
                
             }            
                      .card {
@@ -174,6 +149,11 @@ body {
                       border-radius: 40px;
                       padding: 20px 29px 34px 30px;
                       margin-bottom: 30px;
+                      transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+                               &:hover{
+                              box-shadow: 0px 20px 35px 0px rgba(0, 0, 0, 0.06);
+                              transform: translateY(-5px); 
+                             }
 
                                   img{
                                     position: relative;
@@ -182,7 +162,7 @@ body {
                                   }
                                   svg.icon_like{
                                     position: absolute;
-                                    z-index: 10;
+                                    z-index: 1;
                                     cursor: pointer;
                                   }
                                   h3{
@@ -216,4 +196,59 @@ body {
          
             }
     }
+
+.overlay {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 2;
+
+  .drawer {
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    right: 0px;
+    background: #FFFFFF;
+    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+    padding: 30px;     
+   .cartItem{
+     border: 1px solid #F3F3F3;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+
+      .cartIatemImg{
+        height: 70px;
+        width: 70px;
+        background-repeat: no-repeat;
+        background-position:  0 5px;
+        background-size: contain;
+      }
+      h2  {
+        margin: 0;
+      }
+      p {
+        font-size: 14px;
+        margin: 0;
+      }
+      b{
+        font-size: 16px;
+      }
+      .btnCartRemove{
+        opacity: 0.5;
+        transition: opacity 0.5s ease-in-out;
+        cursor: pointer;
+           &:hover {
+            opacity: 1;
+           }
+      }
+    }
+
+  }
+
+
+  
 }
