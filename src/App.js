@@ -5,6 +5,7 @@ function App() {
 
   return (
     <div className="wrapper clear">
+
      <div className="overlay">
         <div className="drawer">
           <h2 className="mb-30"> Кошик</h2>
@@ -26,6 +27,8 @@ function App() {
           </div>
         </div>
      </div>
+
+
     <header className="d-flex justify-between p-40">
       <div className="header_left d-flex align-center">
            <img width="40" height="40" src="/img/logo.png" alt="logo"/>
@@ -79,6 +82,7 @@ function App() {
     <section className="content">
 
 
+
         <div  className="d-flex justify-between">
 
         <h1>Усі кроссовки</h1>
@@ -87,6 +91,7 @@ function App() {
             <input className="input_search" type="search" placeholder="Пошук..." />
            
           </div>
+
             
             
             
