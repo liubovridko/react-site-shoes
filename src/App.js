@@ -36,13 +36,14 @@ function App() {
 
     <section className="content">
 
-        <div  className="d-flex justify-between">
+
+        <div  className="d-flex justify-between mb-30">
 
         <h1>Усі кроссовки</h1>
           <div className="search-form d-flex">
            <img src="img/search.svg" alt="search" />
             <input className="input_search" type="search" placeholder="Пошук..." />
-           
+
           </div>  
         
         </div>
