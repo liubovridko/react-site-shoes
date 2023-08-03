@@ -214,6 +214,7 @@ body {
     right: 0px;
     background: #FFFFFF;
     box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+
     padding: 30px;
 
     .items{
@@ -224,6 +225,8 @@ body {
      h2  {
         margin: 0;
       }     
+
+  
    .cartItem{
      border: 1px solid #F3F3F3;
     border-radius: 20px;
@@ -237,7 +240,7 @@ body {
         background-position:  0 5px;
         background-size: contain;
       }
-     
+
       p {
         font-size: 14px;
         margin: 0;
@@ -254,6 +257,7 @@ body {
            }
       }
     }
+
     .cart-block-b{
       p {
         margin: 0;
@@ -312,5 +316,6 @@ body {
                       background: #689b28
                     }   
         }
+
 
 }
