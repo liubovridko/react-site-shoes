@@ -3,6 +3,7 @@ import './App.scss';
 import Card from './components/Card';
 import Header from './components/Header';
 import Drawer from './components/Drawer';
+import Slider from './components/Slider';
 
 function App() {
 
@@ -13,25 +14,7 @@ function App() {
 
     <Header />
     
-    <div className="slider d-flex">
-        <div className="slider_left_part">
-
-             <img src="/img/slider_logo.png" alt="logo-slider"/>
-             <div className="slider_info">
-                   <p>Stan Smith, <span>Forever!</span></p>
-                   <button>КУПИТИ</button>
-             </div>
-         </div>
-
-         <div className="slider_right_part">
-
-
-
-              <img src="/img/image_slider.png" alt="slider" />
-
-
-         </div>
-    </div>
+   <Slider />
 
     <section className="content">
 
