@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Drawer from './components/Drawer';
 import Slider from './components/Slider';
 
+
 function App() {
 
   return (
@@ -17,7 +18,6 @@ function App() {
    <Slider />
 
     <section className="content">
-
 
         <div  className="d-flex justify-between mb-30">
 
