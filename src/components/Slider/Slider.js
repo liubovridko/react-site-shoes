@@ -1,16 +1,18 @@
+import styles from "./Slider.module.scss";
+
 function Slider() {
 	return(
-		 <div className="slider d-flex">
-        <div className="slider_left_part">
+		 <div className={styles.slider}>
+        <div className={styles.slider_left_part}>
 
              <img src="/img/slider_logo.png" alt="logo-slider"/>
-             <div className="slider_info">
+             <div className={styles.slider_info}>
                    <p>Stan Smith, <span>Forever!</span></p>
                    <button>КУПИТИ</button>
              </div>
          </div>
 
-         <div className="slider_right_part">
+         <div className={styles.slider_right_part}>
 
 
 
