@@ -5,6 +5,7 @@ import Header from './components/Header/Header.js';
 import Drawer from './components/Drawer/Drawer.js';
 import Slider from './components/Slider/Slider.js';
 
+
 function App() {
   const arr = [
   {title:'Мужские Кроссовки Nike Air Max 270', price:12999, imageUrl:"/img/sneakers/image1.svg"},
@@ -31,7 +32,6 @@ function App() {
    <Slider />
 
     <section className="content">
-
 
         <div  className="d-flex justify-between mb-30">
 
