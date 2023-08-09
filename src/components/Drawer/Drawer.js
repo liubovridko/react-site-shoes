@@ -1,5 +1,6 @@
 import styles from "./Drawer.module.scss";
 
+
 function Drawer({onClose, onRemove, items=[]}) {
 
 
@@ -58,7 +59,6 @@ function Drawer({onClose, onRemove, items=[]}) {
 	          </div>
        )}
            
-		    
 
 	        </div>
      	</div>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import styles from './Card.module.scss';
 
@@ -27,4 +28,6 @@ function Card({onClickFavorite, onPlus, imageUrl, title, price, index}) {
 
 
 
+
 export default Card; 
+
