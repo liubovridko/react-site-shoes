@@ -1,0 +1,6 @@
+{
+  "favorite": [
+  	{"id":"1","title":"Мужские Кроссовки Nike Air Max 270","imageUrl":"/img/sneakers/image1.svg","price":12999},
+  	{"id":"2","title":"Мужские Кроссовки Nike Blazer Mid Suede","imageUrl":"/img/sneakers/image2.svg","price":12999}
+  ]
+}
