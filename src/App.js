@@ -2,8 +2,8 @@
 import React from 'react';
 import './App.scss';
 import axios from 'axios';
-import {Route, Routes} from 'react-router-dom';
 
+import {Route, Routes} from 'react-router-dom';
 import Header from './components/Header/Header.js';
 import Drawer from './components/Drawer/Drawer.js';
 import Home from './pages/Home.jsx';
@@ -63,7 +63,6 @@ function App() {
       axios.delete(`https://react-shop.free.mockoapp.net/favorite/${obj.id}`);
       setItemsFavorite( prev => prev.filter((item) => item.id !== obj.id));
       } else {
-
       axios.post('https://react-shop.free.mockoapp.net/favorite', obj);
       setItemsFavorite( prev => [...prev, obj]);     
      }
@@ -88,10 +87,9 @@ function App() {
     <Routes>
       <Route path="/" exact element={<Home searchValue={searchValue} onChangeSearchValue={onChangeSearchValue} items={items} onAddToFavorite={(obj)=>addToFavorite(obj)}  onAddToCart={onAddToCart}  />} />
        
-      <Route path="/favorites" element={ <Favorites items={itemsFavorite} onAddToFavorite={(obj)=>addToFavorite(obj)}  onAddToCart={onAddToCart} />} exact />
-        
-      
+      <Route path="/favorites" element={ <Favorites items={itemsFavorite} onAddToFavorite={(obj)=>addToFavorite(obj)}  onAddToCart={onAddToCart} />} exact />          
     </Routes>
+
       
     </div>
   );

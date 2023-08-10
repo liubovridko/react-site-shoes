@@ -2,7 +2,6 @@ import styles from "./Header.module.scss";
 import {Link} from "react-router-dom";
 
 function Header(props) {
-
 	return(
 		<header className="d-flex justify-between p-40">
       <Link to="/">
