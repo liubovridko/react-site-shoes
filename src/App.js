@@ -47,6 +47,7 @@ function App() {
       setItemsCart(res.data);
      });
 
+
      axios.get('http://localhost:3000/my-favorites').then((res) =>{
       setItemsFavorite(res.data);
      });*/
@@ -64,9 +65,11 @@ function App() {
   fetchData();
 
 
+
   }, []);
 
   const onAddToCart = (obj) => {
+
     try{
       console.log(obj);
 
@@ -98,6 +101,7 @@ function App() {
             console.log("Error making request:" + error);
         
       }
+
   }
 
   const onRemoveItem = (id)=> {
@@ -116,11 +120,12 @@ function App() {
     
     <Header  onClickCart={()=> setCartOpened(true)} />
     <Routes>
+
       <Route path="/" element={<Home searchValue={searchValue} onChangeSearchValue={onChangeSearchValue} items={items} itemsCart={itemsCart} onAddToFavorite={addToFavorite}  onAddToCart={onAddToCart}  />} />
        
       <Route path="/favorites" element={ <Favorites items={itemsFavorite} onAddToFavorite={addToFavorite}  onAddToCart={onAddToCart} />}  />          
-    </Routes>
 
+    </Routes>
       
     </div>
   );

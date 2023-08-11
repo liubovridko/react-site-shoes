@@ -4,6 +4,7 @@ import styles from './Card.module.scss';
 import ContentLoader from "react-content-loader"
 
 
+
 function Card({ onFavorite, onPlus, id, imageUrl, title, price, favorited=false, added=false, loading }) {
   const [isAdded, setIsAdded]=React.useState(added);
   const [isFavorite, setIsFavorite]=React.useState(favorited);
@@ -42,6 +43,7 @@ function Card({ onFavorite, onPlus, id, imageUrl, title, price, favorited=false,
           }
                   
         </div>        
+
 		);
 }
 
