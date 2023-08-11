@@ -2,7 +2,7 @@ import Card from '../components/Card/Card.js';
 import Slider from '../components/Slider/Slider.js';
 
 
-function Home({searchValue, onChangeSearchValue, items, onAddToFavorite, onAddToCart}) {
+function Home({searchValue, onChangeSearchValue, items, itemsCart, onAddToFavorite, onAddToCart}) {
 	return (
 		<div>
     	<Slider />
@@ -19,12 +19,12 @@ function Home({searchValue, onChangeSearchValue, items, onAddToFavorite, onAddTo
               </div>  
             
             </div>
-            <div className="d-flex justify-start flex-wrap">
+            <div className="d-flex justify-around flex-wrap">
 
          {items
             .filter(item=> item.title.toLowerCase().includes(searchValue.toLowerCase()))
             .map((item, index) => (
-                  <Card key={index} title={item.title} price={item.price} imageUrl={item.imageUrl} onFavorite={(obj) =>onAddToFavorite(obj)} onPlus={(obj) => onAddToCart(obj)} />
+                  <Card key={index} loading={false} added={ itemsCart.some((obj )=> Number(obj.id) === Number(item.id) )  } {...item} onFavorite={(obj) =>onAddToFavorite(obj)} onPlus={(obj) => onAddToCart(obj)} />
           ))}
                
                 
