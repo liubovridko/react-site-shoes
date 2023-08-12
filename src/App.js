@@ -31,11 +31,13 @@ function App() {
   const [itemsFavorite, setItemsFavorite] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState("");
   const [cartOpened, setCartOpened] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() =>{
 
     async function fetchData () {
-    /*fetch('https://64d11d88ff953154bb7a01ae.mockapi.io/items')
+
+/*    fetch('https://64d11d88ff953154bb7a01ae.mockapi.io/items')
     .then((res) => {
      return res.json();
      })
@@ -51,20 +53,19 @@ function App() {
      axios.get('http://localhost:3000/my-favorites').then((res) =>{
       setItemsFavorite(res.data);
      });*/
-
     const itemsResponse = await fetch('https://64d11d88ff953154bb7a01ae.mockapi.io/items').then((res) => {
      return res.json();
      });
     const cartResponse = await axios.get('https://64d11d88ff953154bb7a01ae.mockapi.io/cart');
     const favoriteResponse= await axios.get('http://localhost:3000/my-favorites') ;
-         
+
+     setIsLoading(false);    
+     
      setItemsCart(cartResponse.data);
      setItemsFavorite(favoriteResponse.data);
      setItems(itemsResponse);
    }
   fetchData();
-
-
 
   }, []);
 
@@ -121,7 +122,8 @@ function App() {
     <Header  onClickCart={()=> setCartOpened(true)} />
     <Routes>
 
-      <Route path="/" element={<Home searchValue={searchValue} onChangeSearchValue={onChangeSearchValue} items={items} itemsCart={itemsCart} onAddToFavorite={addToFavorite}  onAddToCart={onAddToCart}  />} />
+
+      <Route path="/" element={<Home isLoading={isLoading} searchValue={searchValue} onChangeSearchValue={onChangeSearchValue} items={items} itemsCart={itemsCart} onAddToFavorite={addToFavorite}  onAddToCart={onAddToCart}  />} />
        
       <Route path="/favorites" element={ <Favorites items={itemsFavorite} onAddToFavorite={addToFavorite}  onAddToCart={onAddToCart} />}  />          
 

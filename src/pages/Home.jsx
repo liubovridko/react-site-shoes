@@ -3,8 +3,16 @@ import Slider from '../components/Slider/Slider.js';
 
 
 
-function Home({searchValue, onChangeSearchValue, items, itemsCart, onAddToFavorite, onAddToCart}) {
-	return (
+
+function Home({searchValue, onChangeSearchValue, items, itemsCart, onAddToFavorite, onAddToCart, isLoading}) {
+  const filteredItems = items.filter(item=> item.title.toLowerCase().includes(searchValue.toLowerCase()));
+	const renderItems = () => {
+     return( isLoading ? [...Array(10)] : filteredItems).map((item, index) => (
+                  <Card key={index} loading={isLoading} added={ itemsCart.some((obj )=> Number(obj.id) === Number(item.id) )  } {...item} onFavorite={(obj) =>onAddToFavorite(obj)} onPlus={(obj) => onAddToCart(obj)} />
+          ));    
+  }
+
+  return (
 		<div>
     	<Slider />
 
@@ -23,12 +31,7 @@ function Home({searchValue, onChangeSearchValue, items, itemsCart, onAddToFavori
 
             <div className="d-flex justify-around flex-wrap">
 
-
-         {items
-            .filter(item=> item.title.toLowerCase().includes(searchValue.toLowerCase()))
-            .map((item, index) => (
-                  <Card key={index} loading={false} added={ itemsCart.some((obj )=> Number(obj.id) === Number(item.id) )  } {...item} onFavorite={(obj) =>onAddToFavorite(obj)} onPlus={(obj) => onAddToCart(obj)} />
-          ))}
+              { renderItems()       }
                  
               </div>
                                  
