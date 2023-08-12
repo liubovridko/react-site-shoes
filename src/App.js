@@ -36,6 +36,7 @@ function App() {
   React.useEffect(() =>{
 
     async function fetchData () {
+
 /*    fetch('https://64d11d88ff953154bb7a01ae.mockapi.io/items')
     .then((res) => {
      return res.json();
@@ -65,9 +66,6 @@ function App() {
      setItems(itemsResponse);
    }
   fetchData();
-
-
-
 
   }, []);
 
@@ -123,6 +121,7 @@ function App() {
     
     <Header  onClickCart={()=> setCartOpened(true)} />
     <Routes>
+
 
       <Route path="/" element={<Home isLoading={isLoading} searchValue={searchValue} onChangeSearchValue={onChangeSearchValue} items={items} itemsCart={itemsCart} onAddToFavorite={addToFavorite}  onAddToCart={onAddToCart}  />} />
        
