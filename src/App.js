@@ -2,12 +2,13 @@
 import React from 'react';
 import './App.scss';
 import axios from 'axios';
-
 import {Route, Routes} from 'react-router-dom';
 import Header from './components/Header/Header.js';
 import Drawer from './components/Drawer/Drawer.js';
 import Home from './pages/Home.jsx';
 import Favorites from './pages/Favorites.jsx';
+import AppContext from './contex.js';
+
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   {title:"Кроссовки Puma X Aka Boku Future Rider<", price:8999, imageUrl:"/img/sneakers/image12.svg"}
   ];
 
+  
   const [items, setItems] = React.useState([]);
   const [itemsCart, setItemsCart] = React.useState([]);
   const [itemsFavorite, setItemsFavorite] = React.useState([]);
@@ -114,8 +116,14 @@ function App() {
       setSearchValue(event.target.value);
   }
 
+  const isAddedItem = (id) => {
+     return itemsCart.some((obj )=> Number(obj.id) === Number(id) );
+  }
+   
   return (
+
     <div className="wrapper clear">
+    <AppContext.Provider value={{items, itemsCart, itemsFavorite, isAddedItem }} >
      
     { cartOpened && <Drawer items={itemsCart} onClose={()=>setCartOpened(false)} onRemove ={onRemoveItem} />  }
     
@@ -128,6 +136,8 @@ function App() {
       <Route path="/favorites" element={ <Favorites items={itemsFavorite} onAddToFavorite={addToFavorite}  onAddToCart={onAddToCart} />}  />          
 
     </Routes>
+
+    </AppContext.Provider>
       
     </div>
   );
