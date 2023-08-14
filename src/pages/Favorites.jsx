@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../components/Card/Card.js';
-import AppContext from "../contex.js";
+import AppContext from "../context.js";
 
 function Favorites({ onAddToFavorite, onAddToCart}) {
   const {itemsFavorite}=React.useContext(AppContext);

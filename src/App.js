@@ -7,7 +7,7 @@ import Header from './components/Header/Header.js';
 import Drawer from './components/Drawer/Drawer.js';
 import Home from './pages/Home.jsx';
 import Favorites from './pages/Favorites.jsx';
-import AppContext from './contex.js';
+import AppContext from './context.js';
 
 
 
@@ -91,7 +91,7 @@ function App() {
   }
   const addToFavorite = async (obj) => {
      try{
-        if(itemsFavorite.find((item) => item.id == obj.id)) {
+        if(itemsFavorite.find((item) => Number(item.id) === Number(obj.id)) ) {
           axios.delete(`http://localhost:3000/my-favorites/${obj.id}`);
           //setItemsFavorite( prev => prev.filter((item) => item.id !== obj.id));
           } else {
@@ -123,9 +123,9 @@ function App() {
   return (
 
     <div className="wrapper clear">
-    <AppContext.Provider value={{items, itemsCart, itemsFavorite, isAddedItem }} >
+    <AppContext.Provider value={{items, itemsCart, itemsFavorite, isAddedItem, setCartOpened, setItemsCart }} >
      
-    { cartOpened && <Drawer items={itemsCart} onClose={()=>setCartOpened(false)} onRemove ={onRemoveItem} />  }
+    { cartOpened && <Drawer items={itemsCart} onRemove ={onRemoveItem}  />  }
     
     <Header  onClickCart={()=> setCartOpened(true)} />
     <Routes>

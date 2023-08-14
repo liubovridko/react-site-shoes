@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './Card.module.scss';
 import ContentLoader from "react-content-loader";
-import AppContext from "../../contex.js";
+import AppContext from "../../context.js";
 
 
 function Card({ onFavorite, onPlus, id, imageUrl, title, price, favorited=false, added=false, loading }) {

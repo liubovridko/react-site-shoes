@@ -1,15 +1,43 @@
+
+import React from 'react';
 import styles from "./Drawer.module.scss";
+import Info from "./Info.js";
+import AppContext from "../../context.js";
+import axios from 'axios';
+
+const delay =(ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+function Drawer({ onRemove, items=[]}) {
+
+const [isOrderComplete, setIsOrderComplete] = React.useState(false);
+const [orderId, setOrderId] = React.useState(null);
+const [isLoading, setIsLoading] = React.useState(false); 
+const { itemsCart, setItemsCart, setCartOpened } = React.useContext(AppContext);
 
 
-function Drawer({onClose, onRemove, items=[]}) {
-
-
+const onClickCheckout= async () => {
+	  try{
+	  	    setIsLoading(true);
+		    const {data} = await axios.post('http://localhost:3000/orders', { items:itemsCart});
+		    setOrderId(data.id);
+			setIsOrderComplete(true);
+			for ( let i=0 ; i< itemsCart.length; i++) {
+				const item = itemsCart[i];
+				await  axios.delete('https://64d11d88ff953154bb7a01ae.mockapi.io/cart/'+ item.id);
+				await delay(1000);
+			}
+			setItemsCart([]);
+		} catch(error) {
+			alert("Failed checkout");
+		}
+		setIsLoading(false);
+	}
 	return(
 		<div className={styles.overlay}  >
 	        <div className="d-flex flex-column" className={styles.drawer} >
 	        
 	          <h2 className="mb-30 d-flex justify-between"> 
-	              Кошик<img  onClick={onClose} className={styles.btnCartRemove} src="img/btn-cart-remove.svg" alt="Button Remove" />
+	              Кошик<img  onClick={()=> setCartOpened(false)} className={styles.btnCartRemove} src="img/btn-cart-remove.svg" alt="Button Remove" />
 	          </h2>
 
 
@@ -46,18 +74,13 @@ function Drawer({onClose, onRemove, items=[]}) {
 			                <div className={styles.lineDashed}></div>
 			                <b>1074 грн.</b>
 			            </div>		            
-			                <button className={styles.greenButton}>Оформити замовлення<img  className="mr-20" width={13} height={12} src="img/icon_right.svg" alt="icon" /></button>  		            
+			                <button disabled={isLoading} onClick={onClickCheckout} className={styles.greenButton}>Оформити замовлення<img  className="mr-20" width={13} height={12} src="img/icon_right.svg" alt="icon" /></button>  		            
 			        </div>
 
 		        </div>) : (
 
-		         <div className={styles.cartEmpty}>
-	              <img src="img/cart-empty.png" width={120} height={120} alt="Cart empty" />
-	              <h3>Корзина порожня</h3>
-	              <p>Додайде хоча б одну пару кросівок, щоб зробити замовлення</p>
-	              <button onClick={onClose} className={styles.greenButton}>Повернутися назад<img  className="mr-20" width={13} height={12} src="img/icon_right.svg" alt="icon" /></button>
-	          </div>
-       )}
+		         <Info image={isOrderComplete ? "img/order-complete.svg" : "img/cart-empty.png"} title={isOrderComplete ? "Замовлення оформлено" :"Корзина порожня"} description={isOrderComplete ? `Ваше замовлення #${orderId} скоро буде передано кур'єрській доставці` : "Додайде хоча б одну пару кросівок, щоб зробити замовлення"} />
+                       )}
            
 
 	        </div>
@@ -65,5 +88,6 @@ function Drawer({onClose, onRemove, items=[]}) {
 
 		);
 }
+
 
 export default Drawer;
