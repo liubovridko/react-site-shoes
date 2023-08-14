@@ -57,6 +57,7 @@
                   transform: translateX(7px);
                  }
                }
+           
           
             img{
                 position: absolute;
@@ -133,7 +134,7 @@
                img {
                   transform: translateX(7px);
                  }
-               }
+               }  
 
               img{
                 position: absolute;
@@ -171,7 +172,22 @@
                     }
                     &:active {
                       background: #689b28
-                    }   
+                    }
+                     &:disabled {
+                      background-color: #bebebe;
+                      cursor: default;
+                      animation: button-loading ease-in-out 0.8s infinite;
+                     }  
         }
-
+   @keyframes button-loading {
+    0%{
+      opacity: 1;
+    }
+    70% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+   }
 }
