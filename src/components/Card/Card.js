@@ -9,13 +9,14 @@ function Card({ onFavorite, onPlus, id, imageUrl, title, price, favorited=false,
   const {isAddedItem }= React.useContext(AppContext);
   //const [isAdded, setIsAdded]=React.useState(added);
   const [isFavorite, setIsFavorite]=React.useState(favorited);
+  const obj = { id, parentId: id, title, imageUrl, price}; 
   const onClickPlus= ()=>{
-    onPlus({ id, title, imageUrl, price});
+    onPlus(obj);
     //setIsAdded(!isAdded);
   }
 
   const onClickFavorite = ()=> {
-     onFavorite({ id ,title, imageUrl, price});
+     onFavorite(obj);
      setIsFavorite(!isFavorite);
   }
 
@@ -40,7 +41,7 @@ function Card({ onFavorite, onPlus, id, imageUrl, title, price, favorited=false,
                     <h3>{title}</h3>
                     <div className="d-flex justify-between">
                          <p>ЦІНА<br/><span>{price} грн</span></p>
-                         <img className={styles.plus} onClick={onClickPlus} src={ isAddedItem(id) ? "img/btn-checked.svg" :"img/btn-plus.svg"} width={32} height={32} />
+                         {onPlus && <img className={styles.plus} onClick={onClickPlus} src={ isAddedItem(id) ? "img/btn-checked.svg" :"img/btn-plus.svg"} width={32} height={32} />}
                     </div>
             </>
           }

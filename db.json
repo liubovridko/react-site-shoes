@@ -1,6 +1,143 @@
 {
   "my-favorites": [],
-  "orders": [
-    
+  "my-orders": [
+    {
+      "items": [
+        {
+          "id": "1",
+          "title": "Кроссовки Puma X Aka Boku Future Rider",
+          "imageUrl": "/img/sneakers/image4.svg",
+          "price": 8499
+        },
+        {
+          "id": "2",
+          "title": "Мужские Кроссовки Nike Blazer Mid Suede",
+          "imageUrl": "/img/sneakers/image3.svg",
+          "price": 8999
+        }
+      ],
+      "id": 1
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Мужские Кроссовки Nike Air Max 270",
+          "imageUrl": "/img/sneakers/image1.svg",
+          "price": 12999
+        },
+        {
+          "id": 2,
+          "title": "Мужские Кроссовки Nike Blazer Mid Suede",
+          "imageUrl": "/img/sneakers/image2.svg",
+          "price": 12999
+        },
+        {
+          "id": 3,
+          "title": "Мужские Кроссовки Nike Blazer Mid Suede",
+          "imageUrl": "/img/sneakers/image3.svg",
+          "price": 8999
+        }
+      ],
+      "id": 2
+    },
+    {
+      "items": [
+        {
+          "id": 12,
+          "parentId": 12,
+          "title": "Кроссовки Puma X Aka Boku Future Rider",
+          "imageUrl": "/img/sneakers/image12.svg",
+          "price": 8999
+        }
+      ],
+      "id": 3
+    },
+    {
+      "items": [
+        {
+          "id": 12,
+          "parentId": 12,
+          "title": "Кроссовки Puma X Aka Boku Future Rider",
+          "imageUrl": "/img/sneakers/image12.svg",
+          "price": 8999
+        }
+      ],
+      "id": 4
+    },
+    {
+      "items": [
+        {
+          "id": "1",
+          "parentId": 12,
+          "title": "Кроссовки Puma X Aka Boku Future Rider",
+          "imageUrl": "/img/sneakers/image12.svg",
+          "price": 8999
+        }
+      ],
+      "id": 5
+    },
+    {
+      "items": [
+        {
+          "id": "1",
+          "parentId": 12,
+          "title": "Кроссовки Puma X Aka Boku Future Rider",
+          "imageUrl": "/img/sneakers/image12.svg",
+          "price": 8999
+        }
+      ],
+      "id": 6
+    },
+    {
+      "items": [
+        {
+          "id": "1",
+          "parentId": 12,
+          "title": "Кроссовки Puma X Aka Boku Future Rider",
+          "imageUrl": "/img/sneakers/image12.svg",
+          "price": 8999
+        }
+      ],
+      "id": 7
+    },
+    {
+      "items": [
+        {
+          "id": 5,
+          "parentId": 5,
+          "title": "Мужские Кроссовки Under Armour Curry 8",
+          "imageUrl": "/img/sneakers/image5.svg",
+          "price": 15999
+        },
+        {
+          "id": 8,
+          "parentId": 8,
+          "title": "Мужские Кроссовки Jordan Air Jordan 11",
+          "imageUrl": "/img/sneakers/image8.svg",
+          "price": 11999
+        }
+      ],
+      "id": 8
+    },
+    {
+      "items": [
+        {
+          "id": 11,
+          "parentId": 11,
+          "title": "Мужские Кроссовки Nike Blazer Mid Suede",
+          "imageUrl": "/img/sneakers/image11.svg",
+          "price": 8499
+        },
+        {
+          "id": 10,
+          "parentId": 10,
+          "title": "Мужские Кроссовки Nike Lebron XVIII Low",
+          "imageUrl": "/img/sneakers/image10.svg",
+          "price": 13999
+        }
+      ],
+      "id": 9
+    }
   ]
 }
