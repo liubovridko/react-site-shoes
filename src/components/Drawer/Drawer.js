@@ -12,16 +12,15 @@ function Drawer({ onRemove, items=[], opened}) {
 const [isOrderComplete, setIsOrderComplete] = React.useState(false);
 const [orderId, setOrderId] = React.useState(null);
 const [isLoading, setIsLoading] = React.useState(false); 
+
 const { itemsCart, setItemsCart, setCartOpened,totalPrice } =useCart();
-
-
 
 const onClickCheckout= async () => {
 	  try{
-	  	    setIsLoading(true);
+	  	  setIsLoading(true);
 		    const {data} = await axios.post('http://localhost:3000/my-orders', { items:itemsCart});
 		    setOrderId(data.id);
-			setIsOrderComplete(true);
+			 setIsOrderComplete(true);
 			for ( let i=0 ; i< itemsCart.length; i++) {
 				const item = itemsCart[i];
 				console.log(item);

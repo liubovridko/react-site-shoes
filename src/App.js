@@ -127,18 +127,18 @@ function App() {
       setSearchValue(event.target.value);
   }
 
-  const isAddedItem = (id) => {
-   
+  const isAddedItem = (id) => {  
      return itemsCart.some((obj )=> Number(obj.parentId) === Number(id) );
+
   }
    
   return (
 
     <div className="wrapper clear">
+
     <AppContext.Provider value={{items, itemsCart, itemsFavorite, isAddedItem, setCartOpened, setItemsCart, addToFavorite, onAddToCart}} >
      
-    <Drawer items={itemsCart} onRemove ={onRemoveItem} opened={cartOpened}  /> 
-    
+    <Drawer items={itemsCart} onRemove ={onRemoveItem} opened={cartOpened}  />    
     <Header  onClickCart={()=> setCartOpened(true)} />
     <Routes>
 

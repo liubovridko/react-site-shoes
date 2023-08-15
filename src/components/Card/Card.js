@@ -41,7 +41,9 @@ function Card({ onFavorite, onPlus, id, imageUrl, title, price, favorited=false,
                     <h3>{title}</h3>
                     <div className="d-flex justify-between">
                          <p>ЦІНА<br/><span>{price} грн</span></p>
+
                          {onPlus && <img className={styles.plus} onClick={onClickPlus} src={ isAddedItem(id) ? "img/btn-checked.svg" :"img/btn-plus.svg"} width={32} height={32} />}
+
                     </div>
             </>
           }
