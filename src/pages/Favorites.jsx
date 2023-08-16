@@ -18,7 +18,7 @@ function Favorites({ onAddToFavorite, onAddToCart}) {
  
                {itemsFavorite
             .map((item, index) => (
-                  <Card key={index} favorited={true} {...item} onFavorite={(obj) =>onAddToFavorite(obj)} onPlus={(obj) => onAddToCart(obj)} />
+                  <Card key={index}  {...item} favorited={true} onFavorite={(obj) =>onAddToFavorite(obj)} onPlus={(obj) => onAddToCart(obj)} />
           ))} 
               </div>
                                  
