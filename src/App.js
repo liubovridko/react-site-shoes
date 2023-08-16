@@ -140,17 +140,16 @@ function App() {
 
   const isAddedItem = (id) => {  
      return itemsCart.some((obj )=> Number(obj.parentId) === Number(id) );
-
   }
 
   const isFavoriteItem = (id) => {  
      return itemsFavorite.some((obj )=> Number(obj.parentId) === Number(id) );
-
   }
    
   return (
 
     <div className="wrapper clear">
+
 
     <AppContext.Provider value={{items, itemsCart, itemsFavorite, isAddedItem, setCartOpened, setItemsCart, addToFavorite, isFavoriteItem, onAddToCart}} >
      
