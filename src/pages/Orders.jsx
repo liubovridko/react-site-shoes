@@ -17,7 +17,7 @@ function Orders() {
     ( 
       async ()=>{
         try{
-          const {data}= await axios.get('http://localhost:3000/my-orders');
+          const {data}= await axios.get('https://64dcf393e64a8525a0f766d6.mockapi.io/orders');
           setOrders(data);
           setIsLoading(false);
         } catch (error) {
