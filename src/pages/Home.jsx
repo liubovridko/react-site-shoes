@@ -2,6 +2,7 @@ import React from 'react';
 
 import Card from '../components/Card/Card.js';
 import Slider from '../components/Slider/Slider.js';
+import AppContext from "../context.js";
 
 import AppContext from "../context.js";
 
@@ -9,9 +10,7 @@ import AppContext from "../context.js";
 function Home({searchValue, onChangeSearchValue, items, itemsCart, onAddToFavorite, onAddToCart, isLoading}) {
 
   const {isFavoriteItem }=React.useContext(AppContext);
-
-  const filteredItems = items.filter(item=> item.title.toLowerCase().includes(searchValue.toLowerCase()));
-    
+  const filteredItems = items.filter(item=> item.title.toLowerCase().includes(searchValue.toLowerCase()));  
 	const renderItems = () => {
      return( isLoading ? [...Array(10)] : filteredItems).map((item, index) => (
                   <Card key={index} loading={isLoading}  {...item} favorited={()=>isFavoriteItem(item && item.id)} onFavorite={(obj) =>onAddToFavorite(obj)} onPlus={(obj) => onAddToCart(obj)} />
