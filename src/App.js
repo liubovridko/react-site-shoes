@@ -109,10 +109,10 @@ function App() {
   }
   const addToFavorite = async (obj) => {
      try{
-        const findItem=itemsFavorite.find( (item) => Number(item.parentId) === Number(obj.id) );
+        const findItem=itemsFavorite.find( (item) => Number(item.id) === Number(obj.id) );
         if(findItem) {
-          await axios.delete(`https://64dcf393e64a8525a0f766d6.mockapi.io/my-favorites/${findItem.id}`);
-          setItemsFavorite( prev => prev.filter((item) => item.parentId !== obj.id));
+          await axios.delete(`https://64dcf393e64a8525a0f766d6.mockapi.io/my-favorites/${obj.id}`);
+          setItemsFavorite( prev => prev.filter((item) => item.id !== obj.id));
           } else {
           const {data}= await axios.post('https://64dcf393e64a8525a0f766d6.mockapi.io/my-favorites', obj);
           setItemsFavorite( prev => [...prev, data]);     
@@ -157,9 +157,7 @@ function App() {
     <Header  onClickCart={()=> setCartOpened(true)} />
     <Routes>
 
-
-      <Route path="/" element={<Home isLoading={isLoading} searchValue={searchValue} onChangeSearchValue={onChangeSearchValue} items={items} itemsCart={itemsCart} onAddToFavorite={addToFavorite}  onAddToCart={onAddToCart}  />} />
-       
+      <Route path="/" element={<Home isLoading={isLoading} searchValue={searchValue} onChangeSearchValue={onChangeSearchValue} items={items} itemsCart={itemsCart} onAddToFavorite={addToFavorite}  onAddToCart={onAddToCart}  />} />  
       <Route path="/favorites" element={ <Favorites items={itemsFavorite} onAddToFavorite={addToFavorite}  onAddToCart={onAddToCart} />}  />  
       <Route path="/orders" element={ <Orders  />}  />         
 

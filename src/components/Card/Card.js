@@ -6,6 +6,7 @@ import AppContext from "../../context.js";
 
 
 function Card({ onFavorite, onPlus, id, imageUrl, title, price, favorited=false, added=false, loading }) {
+
   const {isAddedItem,isFavoriteItem } = React.useContext(AppContext);
   //const [isAdded, setIsAdded]=React.useState(added);
   const [isFavorite, setIsFavorite]=React.useState(favorited);
@@ -36,7 +37,7 @@ function Card({ onFavorite, onPlus, id, imageUrl, title, price, favorited=false,
               <rect x="0" y="194" rx="10" ry="10" width="80" height="24" /> 
               <rect x="109" y="194" rx="8" ry="8" width="32" height="32" />
 
-            </ContentLoader> : <> <img  src= { isFavorite? "img/added_to_favorite.svg" :"img/add_to_favorit.svg"} onClick={onClickFavorite} className={styles.icon_like} width="32" height="32" alt="Add to favorite" />
+            </ContentLoader> : <> <img  src= { isFavorite ? "img/added_to_favorite.svg" :"img/add_to_favorit.svg"} onClick={onClickFavorite} className={styles.icon_like} width="32" height="32" alt="Add to favorite" />
                     <img  src={imageUrl} width="133" height="112" alt="nike"/>
                     <h3>{title}</h3>
                     <div className="d-flex justify-between">
