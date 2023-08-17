@@ -1,7 +1,8 @@
 import React from 'react';
 import Card from '../components/Card/Card.js';
 import axios from 'axios';
-import AppContext from "../context.js";
+import AppContext from '../context.js';
+import OrderItem from '../components/Order/OrderItem.js';
 
 function Orders() {
     const style = {
@@ -12,6 +13,7 @@ function Orders() {
    const {addToFavorite}=React.useContext(AppContext);
    const [orders, setOrders] = React.useState([]);
    const [isLoading, setIsLoading] = React.useState(true);
+
 
   React.useEffect(()=>{
     ( 
@@ -32,20 +34,9 @@ function Orders() {
 		
         <section className="content">
 
-            <div  className="d-flex justify-between mb-30">
-
-            <h1>Мої замовлення</h1>
-               
-            </div>
-            <div className="d-flex justify-start flex-wrap ">
-                <h3 style={style} >Замовлення #</h3>
-               {orders
-            .map((item, index) => (
-                  
-                  <Card key={index} loading={isLoading}  {...item} onFavorite={(obj) =>addToFavorite(obj)}  />   
-          ))
-          } 
-              </div>
+         {orders.map(order => (
+        <OrderItem key={order.id} order={order} />
+          ))}
                                  
         </section>
 	);

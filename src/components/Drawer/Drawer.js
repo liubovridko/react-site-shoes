@@ -18,7 +18,7 @@ const { itemsCart, setItemsCart, setCartOpened,totalPrice } =useCart();
 const onClickCheckout= async () => {
 	  try{
 	  	  setIsLoading(true);
-		    const {data} = await axios.post('http://localhost:3000/my-orders', { items:itemsCart});
+		    const {data} = await axios.post('https://64dcf393e64a8525a0f766d6.mockapi.io/orders', { items:itemsCart});
 		    setOrderId(data.id);
 			 setIsOrderComplete(true);
 			for ( let i=0 ; i< itemsCart.length; i++) {
