@@ -108,14 +108,19 @@ function App() {
     
   }
   const addToFavorite = async (obj) => {
-     try{r
+     try{
         const findItem=itemsFavorite.find( (item) => Number(item.id) === Number(obj.id) );
+       
         if(findItem) {
-          await axios.delete(`https://64dcf393e64a8525a0f766d6.mockapi.io/my-favorites/${obj.id}`);
+
+          await axios.delete(`https://64dcf393e64a8525a0f766d6.mockapi.io/my-favorites/${findItem.id}`);
           setItemsFavorite( prev => prev.filter((item) => item.id !== obj.id));
+
           } else {
+          
           const {data}= await axios.post('https://64dcf393e64a8525a0f766d6.mockapi.io/my-favorites', obj);
-          setItemsFavorite( prev => [...prev, data]);     
+          setItemsFavorite( prev => [...prev, data]); 
+
          }
       }
       catch(error) {  
