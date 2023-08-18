@@ -4,9 +4,6 @@ import Card from '../components/Card/Card.js';
 import Slider from '../components/Slider/Slider.js';
 import AppContext from "../context.js";
 
-import AppContext from "../context.js";
-
-
 function Home({searchValue, onChangeSearchValue, items, itemsCart, onAddToFavorite, onAddToCart, isLoading}) {
 
   const {isFavoriteItem }=React.useContext(AppContext);
