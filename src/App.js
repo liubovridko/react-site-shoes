@@ -115,7 +115,7 @@ function App() {
 
           await axios.delete(`https://64dcf393e64a8525a0f766d6.mockapi.io/my-favorites/${findItem.id}`);
           setItemsFavorite( prev => prev.filter((item) => item.id !== obj.id));
-          
+
           } else {
           
           const {data}= await axios.post('https://64dcf393e64a8525a0f766d6.mockapi.io/my-favorites', obj);
