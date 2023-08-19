@@ -3,7 +3,6 @@ import React from 'react';
 import Card from '../components/Card/Card.js';
 import Slider from '../components/Slider/Slider.js';
 
-
 function Home({searchValue, onChangeSearchValue, items, itemsCart, onAddToFavorite, onAddToCart, isLoading}) {
   const filteredItems = items.filter(item=> item.title.toLowerCase().includes(searchValue.toLowerCase()));  
 	const renderItems = () => {
