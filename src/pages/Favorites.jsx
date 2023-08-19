@@ -14,7 +14,7 @@ function Favorites({ onAddToFavorite, onAddToCart}) {
             <h1>Мої закладки</h1>
                
             </div>
-            <div className="d-flex justify-start flex-wrap ">
+            <div className="d-flex justify-start flex-wrap test-favorite">
  
                {itemsFavorite
             .map((item, index) => (
