@@ -10,7 +10,6 @@ function Card({ onFavorite, onPlus, id, parentId, imageUrl, title, price, favori
   //const [isAdded, setIsAdded]=React.useState(added);
   const [isFavorite, setIsFavorite]=React.useState(favorited);
   const obj = { id, parentId: id, title, imageUrl, price}; 
-  
   const onClickPlus= ()=>{
     onPlus(obj);
     //setIsAdded(!isAdded);
