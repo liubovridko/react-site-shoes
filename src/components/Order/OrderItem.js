@@ -9,6 +9,7 @@ const OrderItem = ({ order }) => {
     <div className="d-flex flex-column justify-between mb-30">
       <h2>Мої замовлення #{id}</h2>
       <p>Дата cтворення: {new Date(createdAt).toLocaleString()}</p>
+      <p>Дата cтворення: {new Date(createdAt).toLocaleString()}</p>
       <h3>Список товарів:</h3>
        <div className="d-flex justify-start flex-wrap ">
         {items.map((item,key) => (
