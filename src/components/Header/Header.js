@@ -10,7 +10,7 @@ function Header(props) {
 		<header className="d-flex justify-between p-40">
       <Link to="/">
         <div className="header_left d-flex align-center">
-             <img width="40" height="40" src="/img/logo.png" alt="logo"/>
+             <img width="40" height="40" src={process.env.PUBLIC_URL + "/img/logo.png"} alt="logo"/>
   		      <div className={styles.header_info}>
   		          <h2 className="m-0 text-uppercase">REACT SHOES</h2>
   		          <p className="m-0">Магазин найкращого взуття</p>

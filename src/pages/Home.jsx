@@ -22,7 +22,7 @@ function Home({searchValue, onChangeSearchValue, items, itemsCart, onAddToFavori
 
             <h1>{searchValue ? `Пошук по значенню:"${searchValue}"` : "Усі кроссовки" }</h1>
               <div className="search-form d-flex">
-               <img src="img/search.svg" alt="search" />
+               <img src="./img/search.svg" alt="search" />
                 <input onChange={onChangeSearchValue} className="input_search" type="search" value={searchValue} placeholder="Пошук..." />
 
               </div>  
