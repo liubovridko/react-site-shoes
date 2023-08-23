@@ -4,10 +4,11 @@ import Card from '../components/Card/Card.js';
 import Slider from '../components/Slider/Slider.js';
 
 function Home({searchValue, onChangeSearchValue, items, itemsCart, onAddToFavorite, onAddToCart, isLoading}) {
-  const filteredItems = items.filter(item=> item.title.toLowerCase().includes(searchValue.toLowerCase()));  
+  const filteredItems = items.filter(item=> item.title.toLowerCase().includes(searchValue.toLowerCase()));
+  //favorited={()=>isFavoriteItem(item && item.id)}; 
 	const renderItems = () => {
      return( isLoading ? [...Array(10)] : filteredItems).map((item, index) => (
-                  <Card key={index} loading={isLoading}  {...item} favorited={()=>isFavoriteItem(item && item.id)} onFavorite={(obj) =>onAddToFavorite(obj)} onPlus={(obj) => onAddToCart(obj)} />
+                  <Card key={index} loading={isLoading}  {...item}  onFavorite={(obj) =>onAddToFavorite(obj)} onPlus={(obj) => onAddToCart(obj)} />
           ));    
   }
 
@@ -21,7 +22,7 @@ function Home({searchValue, onChangeSearchValue, items, itemsCart, onAddToFavori
 
             <h1>{searchValue ? `Пошук по значенню:"${searchValue}"` : "Усі кроссовки" }</h1>
               <div className="search-form d-flex">
-               <img src="img/search.svg" alt="search" />
+               <img src="./img/search.svg" alt="search" />
                 <input onChange={onChangeSearchValue} className="input_search" type="search" value={searchValue} placeholder="Пошук..." />
 
               </div>  
