@@ -35,11 +35,10 @@ function App() {
   const [searchValue, setSearchValue] = React.useState("");
   const [cartOpened, setCartOpened] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
+  
+   React.useEffect(() =>{
 
-  React.useEffect(() =>{
-
-    async function fetchData () {
-
+ async function fetchData () {
 /*    fetch('https://64d11d88ff953154bb7a01ae.mockapi.io/items')
     .then((res) => {
      return res.json();
@@ -170,7 +169,7 @@ function App() {
 
     </AppContext.Provider>
       
-    </div>
+  </div>
   );
 }
 
